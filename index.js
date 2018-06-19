@@ -21,7 +21,7 @@ var zipFiles = function(output, sourceFiles) {
   zipped.stderr.on('data', function(data) {
     data = data.toString();
     if (!data.startsWith('WARNING')) {
-      zipEmitter.emit('error', );
+      zipEmitter.emit('error', data);
       console.log('Error when zipping:', data);
     }
   });
