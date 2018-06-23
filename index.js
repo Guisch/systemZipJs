@@ -47,3 +47,4 @@ var removeFileFromZip = function(zipFile, fileToRemove, callback) {
 }
 
 exports.zipFiles = zipFiles;
+exports.removeFileFromZip = removeFileFromZip;
