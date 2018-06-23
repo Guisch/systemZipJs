@@ -42,11 +42,7 @@ var removeFileFromZip = function(zipFile, fileToRemove, callback) {
   var zipped = spawn('zip', args);
 
   zipped.on('exit', function(code) {
-    if (code.toString() == '0') {
-      callback();
-    } else {
-      console.log('Error');
-    }
+    callback();
   });
 }
 
