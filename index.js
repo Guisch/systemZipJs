@@ -37,4 +37,13 @@ var zipFiles = function(output, sourceFiles) {
   return zipEmitter;
 }
 
+var removeFileFromZip = function(zipFile, fileToRemove, callback) {
+  var args = ['-d', '"' + zipFile + '"', '"' + fileToRemove + '"'];
+  var zipped = spawn('zip', args);
+
+  zipped.on('exit', function(code) {
+    callback(code);
+  });
+}
+
 exports.zipFiles = zipFiles;
