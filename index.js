@@ -2,7 +2,7 @@ var spawn = require('child_process').spawn;
 var EventEmitter = require('events');
 
 var zipFiles = function(output, sourceFiles) {
-  var args = ['-0j', output];
+  var args = ['-0j', output.replaceAll("[^a-zA-Z0-9\\.\\-]", "_")];
   var i = 0;
   const zipEmitter = new EventEmitter();
   var zipped = spawn('zip', args.concat(sourceFiles));
